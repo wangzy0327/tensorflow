@@ -479,14 +479,20 @@ def check_bazel_version(min_version, max_version):
   Returns:
     The bazel version detected.
   """
-  if which('bazel') is None:
-    print('Cannot find bazel. Please install bazel.')
-    sys.exit(1)
-
+  curr_version = None
   stderr = open(os.devnull, 'wb')
-  curr_version = run_shell(['bazel', '--version'],
-                           allow_non_zero=True,
-                           stderr=stderr)
+  if which('bazelisk') is None and which('bazel') is None:
+    print('Cannot find bazelisk or bazel. Please install bazelisk or bazel.') 
+    sys.exit(1)
+  elif which('bazelisk')  is not None:
+    curr_version = run_shell(['bazelisk', '--version'],
+                        allow_non_zero=True,
+                        stderr=stderr)
+  elif which('bazel') is not None:
+    curr_version = run_shell(['bazel', '--version'],
+                    allow_non_zero=True,
+                    stderr=stderr)
+
   if curr_version.startswith('bazel '):
     curr_version = curr_version.split('bazel ')[1]
 
