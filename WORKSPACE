@@ -21,3 +21,16 @@ tf_workspace1()
 load("@//tensorflow:workspace0.bzl", "tf_workspace0")
 
 tf_workspace0()
+
+
+new_local_repository(
+    name = "oneAPI",
+    path = "/home/wzy/sycl_workspace/build-cuda",
+    build_file = "third_party/oneAPI/BUILD",
+)
+
+new_local_repository(
+    name = "oneDNN",
+    path = "/home/wzy/sycl_workspace/oneDNN-cuda-debug",
+    build_file = "third_party/oneDNN/BUILD",
+)
