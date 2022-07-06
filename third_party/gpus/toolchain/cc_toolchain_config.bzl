@@ -66,6 +66,8 @@ def _impl(ctx):
                         flag_group(
                             flags = [
                                 "-lstdc++",
+                                "-lm",
+                                "-lpthread",
                             ],
                         ),
                     ]),
@@ -79,6 +81,7 @@ def _impl(ctx):
         features = features, # NEW
         cxx_builtin_include_directories = [
             "/home/wzy/sycl_workspace/build-cuda/include",
+            "/home/wzy/sycl_workspace/build-cuda/lib",
             "/home/wzy/sycl_workspace/build-cuda/include/sycl",
             "/home/wzy/sycl_workspace/oneDNN-cuda-debug/include",
             "/usr/include",

@@ -8,17 +8,11 @@ cc_library(
     hdrs = glob(
          [
               "include/*.h",
+              "include/**/*.h",
          ]),
-    copts = [
-        "-Iexternel/oneAPI/include",
-        "-Iexternel/oneAPI/include/sycl",
-    ],
     includes = [
         "include",
     ], # ["include"],
     linkstatic= 1,
-    deps = [
-        "@oneAPI//:oneAPI",
-    ],
     visibility = ["//visibility:public"],
 )

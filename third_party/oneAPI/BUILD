@@ -7,10 +7,14 @@ cc_library(
     ),
     hdrs = glob(
          [
-              "include/sycl/*.h",
-              "include/*.h",
+              "include/sycl/**/*.h",
+              "lib/**/*.h",
          ]),
-    includes = ["include",], # ["include"],
+    includes = [
+     "include",
+     "include/sycl",
+     "lib",
+    ], # ["include"],
     linkstatic= 1,
     visibility = ["//visibility:public"],
 )
