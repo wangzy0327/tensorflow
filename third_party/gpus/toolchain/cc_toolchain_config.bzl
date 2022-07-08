@@ -20,10 +20,12 @@ def _impl(ctx):
         tool_path(
             name = "gcc",
             path = "/home/wzy/sycl_workspace/build-cuda/bin/clang",
+            # path = "/home/wzy/app/llvm-build-13.0.1/bin/clang",
         ),
         tool_path(
             name = "g++",
             path = "/home/wzy/sycl_workspace/build-cuda/bin/clang++",
+            # path = "/home/wzy/app/llvm-build-13.0.1/bin/clang++",
         ),
         tool_path(
             name = "ld",
@@ -31,27 +33,28 @@ def _impl(ctx):
         ),
         tool_path(
             name = "ar",
-            path = "/bin/false",
+            path = "/usr/bin/ar",
         ),
         tool_path(
             name = "cpp",
-            path = "/bin/false",
+            path = "/home/wzy/sycl_workspace/build-cuda/bin/clang++",
+            # path = "/home/wzy/app/llvm-build-13.0.1/bin/clang++",
         ),
         tool_path(
             name = "gcov",
-            path = "/bin/false",
+            path = "/usr/bin/gcov",
         ),
         tool_path(
             name = "nm",
-            path = "/bin/false",
+            path = "/usr/bin/nm",
         ),
         tool_path(
             name = "objdump",
-            path = "/bin/false",
+            path = "/usr/bin/objdump",
         ),
         tool_path(
             name = "strip",
-            path = "/bin/false",
+            path = "/usr/bin/strip",
         ),
     ]
 
